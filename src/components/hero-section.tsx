@@ -5,15 +5,15 @@ import { ShoppingBag, TrendingUp, Award, Clock } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white">
-      <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
+    <section className="relative w-full overflow-hidden">
+      <div className="container px-4 md:px-12 py-12 md:py-24 lg:py-32">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                 Discover Your Style, Elevate Your Life
               </h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+              <p className="max-w-[600px]  md:text-xl text-muted-foreground">
                 Shop the latest trends with confidence. Quality products, seamless experience, and fast delivery.
               </p>
             </div>
@@ -48,15 +48,15 @@ export function HeroSection() {
           <div className="flex items-center justify-center">
             <div className="relative h-[450px] w-full overflow-hidden rounded-xl">
               <Image
-                src="/placeholder.svg?height=900&width=800"
+                src="/watch.jpg" 
                 alt="Featured products showcase"
                 fill
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-4 left-4 right-4 rounded-lg bg-white/90 p-4 backdrop-blur-sm dark:bg-black/80">
+              <div className="absolute bottom-4 left-4 right-4 rounded-lg p-4 backdrop-blur-sm bg-background/90">
                 <p className="text-sm font-medium">New Collection Available Now</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs  text-muted-foreground ">
                   Limited time offer: Get 20% off your first order
                 </p>
               </div>
@@ -64,7 +64,9 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]">
+        {/* ^ Changed from bg-white bg-[linear-gradient... to use CSS variables */}
+      </div>
     </section>
   )
 }
